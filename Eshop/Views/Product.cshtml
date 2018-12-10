@@ -1,0 +1,19 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Product>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = null;
+    var product = Model.Content;
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Product @Model.Content.ProductName</title>
+</head>
+<body>
+    <h1>@product.ProductName</h1>
+    <p>@product.Description</p>
+    <hr />
+    Brand: @(product.ProductBrand.Name)<br />
+    Price: @product.Price<br />
+
+</body>
+</html>

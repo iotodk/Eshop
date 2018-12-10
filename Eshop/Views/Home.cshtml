@@ -1,0 +1,48 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Home>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = null;
+    var collections = Model.Content.Descendants<ItemsCollection>();
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Webshop</title>
+</head>
+<body>
+
+    <h1>Webshop</h1>
+    @{
+    <ul>
+        @foreach(var collection in collections)
+        {
+            <li>
+                @collection.CollectionName
+                @if(collection.CategoryIds != null && collection.CategoryIds.Count() > 0)
+                {
+                    <ul>
+                        @foreach(Category category in collection.CategoryIds)
+                        {
+                            <li>
+                                @(category.CategoryName)
+                                @if(category.ItemsIds != null && category.ItemsIds.Count() > 0)
+                                {
+                                    <ul>
+                                        @foreach(Product product in category.ItemsIds)
+                                        {
+                                            <li>
+                                                <a href="@product.Url">@(product.ProductName)</a>
+                                            </li>
+                                        }
+                                    </ul>
+                                }
+                            </li>
+                        }
+                    </ul>
+                }
+            </li>
+        }
+    </ul>
+    }
+
+</body>
+</html>
