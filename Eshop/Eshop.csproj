@@ -322,9 +322,9 @@
     <Content Include="Views\Home.cshtml" />
     <Content Include="Views\ItemsCollection.cshtml" />
     <Content Include="Views\Product.cshtml" />
-    <Content Include="Packages\Package1_1.0.zip" />
-    <Content Include="Packages\Package2_1.0.zip" />
-    <Content Include="Packages\Package3_1.0.zip" />
+    <Content Include="SitePackages\Package1_1.0.zip" />
+    <Content Include="SitePackages\Package2_1.0.zip" />
+    <Content Include="SitePackages\Package3_1.0.zip" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
